@@ -1,0 +1,60 @@
+.title{
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.task-list{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.task-card{
+  display: flex;
+  justify-content: space-between;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.left h3{
+  margin: 0;
+}
+
+.employee{
+  font-size: 13px;
+  color: gray;
+}
+
+.status{
+  padding: 5px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+}
+
+.pending{
+  background: #ffe0e0;
+  color: red;
+}
+
+.progress{
+  background: #fff4cc;
+  color: orange;
+}
+
+.done{
+  background: #d4edda;
+  color: green;
+}
+
+button{
+  margin-top: 10px;
+  padding: 6px 12px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}

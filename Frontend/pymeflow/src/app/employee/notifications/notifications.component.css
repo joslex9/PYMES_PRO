@@ -1,0 +1,28 @@
+.notification-card{
+  padding:15px;
+  border-radius:10px;
+  margin-bottom:10px;
+  font-weight:500;
+}
+
+/* TIPOS */
+.notification-card.pending{
+  background:#fef3c7;
+  color:#92400e;
+}
+
+.notification-card.late{
+  background:#fee2e2;
+  color:#991b1b;
+}
+
+.notification-card.done{
+  background:#dcfce7;
+  color:#166534;
+}
+
+.empty{
+  text-align:center;
+  margin-top:30px;
+  color:#9ca3af;
+}

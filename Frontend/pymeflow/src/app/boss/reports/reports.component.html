@@ -1,0 +1,33 @@
+<div class="page">
+
+  <h1>📊 Reportes</h1>
+
+  <div class="cards">
+
+    <div class="card">
+      <h3>Total tareas</h3>
+      <p>{{stats.total}}</p>
+    </div>
+
+    <div class="card green">
+      <h3>Completadas</h3>
+      <p>{{stats.completed}}</p>
+    </div>
+
+    <div class="card blue">
+      <h3>En proceso</h3>
+      <p>{{stats.inProgress}}</p>
+    </div>
+
+    <div class="card red">
+      <h3>Pendientes</h3>
+      <p>{{stats.pending}}</p>
+    </div>
+
+  </div>
+
+  <div class="chart-container">
+    <canvas id="tasksChart"></canvas>
+  </div>
+
+</div>

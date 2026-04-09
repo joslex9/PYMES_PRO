@@ -1,0 +1,82 @@
+<div class="upload-container">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div>
+      <h2>Cargar Evidencia</h2>
+      <p class="subtitle">Sube archivos relacionados a la tarea</p>
+    </div>
+
+    <!-- ❌ YA NO usamos router directo -->
+    <button class="close-btn" (click)="goBack()">✖</button>
+  </div>
+
+  <!-- DROP ZONE -->
+  <div
+    class="drop-zone"
+    [class.dragging]="isDragging"
+    (drop)="onDrop($event)"
+    (dragover)="allowDrop($event)"
+    (dragleave)="onDragLeave()"
+  >
+
+    <div class="upload-icon">⬆️</div>
+
+    <p class="main-text">Arrastra y suelta tus archivos aquí</p>
+    <p class="sub-text">PDF, JPG, PNG (máx. 10MB)</p>
+
+    <label class="file-btn">
+      Seleccionar archivos
+      <input type="file" (change)="onFileSelected($event)" multiple hidden>
+    </label>
+
+  </div>
+
+  <!-- LISTA DE ARCHIVOS -->
+  <div *ngIf="files.length > 0" class="files-section">
+
+    <h4>Archivos cargados</h4>
+
+    <div *ngFor="let file of files; let i = index" class="file-item">
+
+      <div class="file-info">
+        <span class="file-icon">📄</span>
+        <div>
+          <p class="file-name">{{ file.name }}</p>
+          <small>{{ file.size / 1024 | number:'1.0-0' }} KB</small>
+        </div>
+      </div>
+
+      <button class="delete-btn" (click)="removeFile(i)">🗑</button>
+
+    </div>
+
+  </div>
+
+  <!-- COMENTARIO -->
+  <div class="comment-section">
+
+    <h4>Comentarios del empleado</h4>
+
+    <textarea
+      [(ngModel)]="comment"
+      placeholder="Escribe detalles adicionales sobre tu trabajo..."
+    ></textarea>
+
+  </div>
+
+  <!-- ACCIONES -->
+  <div class="actions">
+
+    <!-- ❌ ERROR CORREGIDO AQUÍ -->
+    <button class="cancel" (click)="goBack()">
+      Cancelar
+    </button>
+
+    <button class="submit" (click)="upload()" [disabled]="loading">
+      {{ loading ? 'Subiendo...' : 'Enviar Evidencia 🚀' }}
+    </button>
+
+  </div>
+
+</div>

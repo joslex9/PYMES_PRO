@@ -1,0 +1,30 @@
+<h2 class="title">Lista de Tareas</h2>
+
+<div class="task-list">
+
+  <div class="task-card" *ngFor="let task of tasks">
+
+    <div class="left">
+      <h3>{{task.title}}</h3>
+      <p>{{task.description}}</p>
+      <span class="employee">👤 {{task.assigned_name}}</span>
+    </div>
+
+    <div class="right">
+      <span class="status" 
+        [ngClass]="{
+          'pending': task.status === 'PENDIENTE',
+          'progress': task.status === 'EN_PROCESO',
+          'done': task.status === 'APROBADA'
+        }">
+        {{task.status}}
+      </span>
+
+      <button (click)="goToReview(task.id)">
+        Revisar
+      </button>
+    </div>
+
+  </div>
+
+</div>

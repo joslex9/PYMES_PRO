@@ -1,0 +1,220 @@
+/* CONTENEDOR GENERAL */
+.upload-container {
+  max-width: 750px;
+  margin: 40px auto;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 25px 30px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  font-family: 'Inter', sans-serif;
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.header h2 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.subtitle {
+  color: #6b7280;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+/* BOTÓN CERRAR */
+.close-btn {
+  background: #f3f4f6;
+  border: none;
+  border-radius: 8px;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.close-btn:hover {
+  background: #e5e7eb;
+}
+
+/* DROP ZONE */
+.drop-zone {
+  border: 2px dashed #cbd5e1;
+  border-radius: 14px;
+  padding: 40px 20px;
+  text-align: center;
+  background: #f9fafb;
+  transition: all 0.25s ease;
+  margin-bottom: 25px;
+}
+
+.drop-zone.dragging {
+  border-color: #3b82f6;
+  background: #eff6ff;
+}
+
+.upload-icon {
+  font-size: 35px;
+  margin-bottom: 10px;
+}
+
+.main-text {
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.sub-text {
+  font-size: 13px;
+  color: #6b7280;
+  margin-bottom: 15px;
+}
+
+/* BOTÓN FILE */
+.file-btn {
+  display: inline-block;
+  background: #2563eb;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.file-btn:hover {
+  background: #1d4ed8;
+}
+
+/* ARCHIVOS */
+.files-section {
+  margin-bottom: 25px;
+}
+
+.files-section h4 {
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #374151;
+}
+
+.file-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f9fafb;
+  border-radius: 10px;
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  transition: 0.2s;
+}
+
+.file-item:hover {
+  background: #f1f5f9;
+}
+
+/* INFO ARCHIVO */
+.file-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.file-icon {
+  font-size: 20px;
+}
+
+.file-name {
+  font-weight: 500;
+  margin: 0;
+}
+
+.file-info small {
+  color: #6b7280;
+}
+
+/* BOTÓN ELIMINAR */
+.delete-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.2s;
+}
+
+.delete-btn:hover {
+  color: red;
+}
+
+/* COMENTARIO */
+.comment-section {
+  margin-bottom: 25px;
+}
+
+.comment-section h4 {
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+textarea {
+  width: 100%;
+  min-height: 100px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  padding: 12px;
+  resize: none;
+  font-size: 14px;
+  outline: none;
+  transition: 0.2s;
+}
+
+textarea:focus {
+  border-color: #2563eb;
+}
+
+/* BOTONES */
+.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* CANCELAR */
+.cancel {
+  background: #f3f4f6;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.cancel:hover {
+  background: #e5e7eb;
+}
+
+/* ENVIAR */
+.submit {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+  font-weight: 500;
+}
+
+.submit:hover {
+  background: #1d4ed8;
+}
+
+.submit:disabled {
+  background: #93c5fd;
+  cursor: not-allowed;
+}

@@ -1,0 +1,115 @@
+<div class="page">
+
+  <div class="header">
+    <h1>Crear Nueva Tarea</h1>
+    <p>Mejora el flujo de trabajo asignando responsabilidades claras.</p>
+  </div>
+
+  <div class="card">
+
+    <!-- Título -->
+    <div class="form-group">
+      <label>Título de la tarea</label>
+      <input
+        type="text"
+        placeholder="Ej: Implementar facturación electrónica"
+        [(ngModel)]="title"
+      >
+    </div>
+
+    <!-- Descripción -->
+    <div class="form-group">
+      <label>Descripción</label>
+      <textarea
+        placeholder="Describe los objetivos o recursos necesarios..."
+        [(ngModel)]="description"
+      ></textarea>
+    </div>
+
+    <!-- Fila -->
+    <div class="row">
+
+      <!-- Empleado -->
+      <div class="form-group">
+        <label>Asignar a</label>
+
+        <select [(ngModel)]="assigned_to">
+          <option value="">Seleccionar empleado</option>
+
+          <option *ngFor="let emp of employees" [value]="emp.id">
+            {{emp.name}}
+          </option>
+
+        </select>
+      </div>
+
+      <!-- Fecha -->
+      <div class="form-group">
+        <label>Fecha límite</label>
+
+        <input
+          type="date"
+          [(ngModel)]="deadline"
+        >
+      </div>
+
+    </div>
+
+    <!-- Prioridad -->
+    <div class="priority">
+
+      <label>Nivel de prioridad</label>
+
+      <div class="priority-buttons">
+
+        <button 
+          [class.active]="priority==='Baja'"
+          (click)="priority='Baja'">
+          BAJA
+        </button>
+
+        <button 
+          [class.active]="priority==='Media'"
+          (click)="priority='Media'">
+          MEDIA
+        </button>
+
+        <button 
+          [class.active]="priority==='Alta'"
+          (click)="priority='Alta'">
+          ALTA
+        </button>
+
+        <button 
+          [class.active]="priority==='Urgente'"
+          (click)="priority='Urgente'">
+          URGENTE
+        </button>
+
+      </div>
+
+      <p class="selected">
+        Prioridad seleccionada: <b>{{priority}}</b>
+      </p>
+
+    </div>
+
+    <!-- BOTONES -->
+    <div class="actions">
+
+      <button type="button" class="cancel">
+        Cancelar
+      </button>
+
+      <button
+        type="button"
+        class="create"
+        (click)="createTask()">
+        Crear Tarea
+      </button>
+
+    </div>
+
+  </div>
+
+</div>

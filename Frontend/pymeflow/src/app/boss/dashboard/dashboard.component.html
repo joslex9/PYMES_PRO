@@ -1,0 +1,92 @@
+<div class="dashboard">
+
+  <!-- Header -->
+  <div class="dashboard-header">
+    <div>
+      <h2>Hola, {{userName}}</h2>
+      <p>Este es el estado actual de tu operación hoy.</p>
+    </div>
+
+    <button class="btn-new" routerLink="/boss/create-task">
+      + Nueva Tarea
+    </button>
+  </div>
+
+  <!-- Cards estadísticas -->
+  <div class="stats">
+
+    <div class="stat-card">
+      <div class="icon">📋</div>
+      <div>
+        <p class="label">TOTAL TAREAS</p>
+        <h3>{{stats.total}}</h3>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <div class="icon green">✔</div>
+      <div>
+        <p class="label">COMPLETADAS</p>
+        <h3>{{stats.completed}}</h3>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <div class="icon blue">⏳</div>
+      <div>
+        <p class="label">EN CURSO</p>
+        <h3>{{stats.inProgress}}</h3>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <div class="icon red">!</div>
+      <div>
+        <p class="label">ATRASADAS</p>
+        <h3>{{stats.late}}</h3>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Tareas recientes -->
+  <div class="tasks-section">
+
+    <div class="tasks-header">
+      <h3>Tareas Recientes</h3>
+
+      <div>
+        <button class="btn">Exportar</button>
+        <button class="btn">Filtrar</button>
+      </div>
+    </div>
+
+    <div class="task-row" *ngFor="let t of tasks">
+
+      <div class="task-title">
+        <strong>{{t.title}}</strong>
+        <span>{{t.department}}</span>
+      </div>
+
+      <div class="task-user">
+        {{t.assigned_name}}
+      </div>
+
+      <div class="task-date">
+        {{t.created_at | date}}
+      </div>
+
+      <div class="task-status"
+           [ngClass]="{
+           'approved':t.status=='APROBADA',
+           'review':t.status=='EN_REVISION',
+           'late':t.status=='ATRASADA'
+           }">
+        {{t.status}}
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

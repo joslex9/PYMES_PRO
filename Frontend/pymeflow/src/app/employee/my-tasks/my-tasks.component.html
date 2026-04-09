@@ -1,0 +1,60 @@
+<div class="container">
+
+  <h2>Hola, {{userName}} 👋</h2>
+  <p class="subtitle">
+    Aquí está el resumen de <b>Mis tareas para Hoy</b>.
+  </p>
+
+  <!-- SIN TAREAS -->
+  <div *ngIf="tasks.length === 0" class="empty">
+    No hay más tareas asignadas para hoy
+  </div>
+
+  <!-- LISTA -->
+  <div *ngFor="let task of tasks" class="task-card">
+
+    <!-- ESTADO -->
+    <div class="status"
+      [ngClass]="{
+        'pending': getStatus(task) === 'PENDIENTE',
+        'late': getStatus(task) === 'ATRASADO',
+        'done': getStatus(task) === 'COMPLETADA'
+      }">
+
+      {{ getStatus(task) }}
+    </div>
+
+    <!-- TITULO -->
+    <h3>{{task.title}}</h3>
+
+    <!-- FECHA -->
+    <p class="date">
+      📅 
+      <span *ngIf="getStatus(task) === 'ATRASADO'">
+        Venció: {{ task.deadline | date:'mediumDate' }}
+      </span>
+      <span *ngIf="getStatus(task) !== 'ATRASADO'">
+        Vence: {{ task.deadline | date:'mediumDate' }}
+      </span>
+    </p>
+
+    <!-- ACCIONES -->
+    <div class="actions">
+
+      <!-- CAMBIO DE ESTADO REAL -->
+      <select (change)="changeStatus(task.id, $event)">
+        <option value="PENDIENTE">Pendiente</option>
+        <option value="EN_PROCESO">En proceso</option>
+        <option value="COMPLETADA">Completada</option>
+      </select>
+
+      <!-- BOTÓN -->
+      <button (click)="goToUpload(task.id)">
+        📎 Subir Evidencia
+      </button>
+
+    </div>
+
+  </div>
+
+</div>

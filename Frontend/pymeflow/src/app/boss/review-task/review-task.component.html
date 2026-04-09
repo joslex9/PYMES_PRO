@@ -1,0 +1,99 @@
+<div class="container">
+
+  <h2 class="title">Revisar y Calificar Evidencia</h2>
+  <p class="subtitle">Tarea: {{task?.title}}</p>
+
+  <div class="grid">
+
+    <!-- DETALLES -->
+    <div class="card">
+
+      <div class="header">
+        <h3>Detalles de la Tarea</h3>
+        <span class="badge">ALTA PRIORIDAD</span>
+      </div>
+
+      <p><b>Asignado a:</b> {{task?.assigned_name}}</p>
+
+      <p><b>Estado:</b> 
+        <span class="status"
+          [ngClass]="task?.status?.toLowerCase()">
+          {{task?.status}}
+        </span>
+      </p>
+
+      <p><b>Descripción:</b></p>
+      <p>{{task?.description}}</p>
+
+    </div>
+
+    <!-- EVIDENCIAS -->
+    <div class="card">
+
+      <h3>📂 Evidencia Entregada</h3>
+
+      <div class="files">
+
+        <div class="file"
+             *ngFor="let file of evidences"
+             (click)="openFile(file)">
+
+          <!-- IMAGEN -->
+          <img *ngIf="isImage(file)"
+               [src]="'http://localhost:4000/' + file.file_url" />
+
+          <!-- DOCUMENTO -->
+          <div *ngIf="!isImage(file)" class="file-icon">
+            📄
+            <p>Archivo</p>
+          </div>
+
+        </div>
+
+      </div>
+
+      <p class="count">
+        {{evidences.length}} archivos subidos
+      </p>
+
+    </div>
+
+  </div>
+
+  <!-- CALIFICAR -->
+  <div class="card" style="margin-top:20px">
+
+    <h3>Calificar Tarea</h3>
+
+    <div class="actions">
+
+      <button class="btn btn-success"
+        [class.active]="status==='APROBADA'"
+        (click)="setStatus('APROBADA')">
+        ✔ Aprobar
+      </button>
+
+      <button class="btn btn-warning"
+        [class.active]="status==='EN_AJUSTES'"
+        (click)="setStatus('EN_AJUSTES')">
+        ⚠ Ajustes
+      </button>
+
+      <button class="btn btn-danger"
+        [class.active]="status==='RECHAZADA'"
+        (click)="setStatus('RECHAZADA')">
+        ✖ Rechazar
+      </button>
+
+    </div>
+
+    <textarea [(ngModel)]="feedback"
+      placeholder="Escribe comentarios del jefe..."></textarea>
+
+    <button class="btn btn-primary" (click)="saveReview()">
+      Guardar Calificación
+    </button>
+
+  </div>
+
+</div>

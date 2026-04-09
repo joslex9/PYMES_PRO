@@ -1,0 +1,31 @@
+<div class="sidebar">
+
+  <h2 class="logo">PymeFlow</h2>
+
+  <!-- MENÚ -->
+  <nav>
+
+    <!-- EMPLEADO -->
+    <ng-container *ngIf="role === 'employee'; else bossMenu">
+      <a routerLink="/employee/tasks" routerLinkActive="active">Mis Tareas</a>
+      <a routerLink="/employee/notifications" routerLinkActive="active">Notificaciones</a>
+    </ng-container>
+
+    <!-- JEFE -->
+    <ng-template #bossMenu>
+      <ng-container *ngIf="role === 'boss'">
+        <a routerLink="/boss/dashboard" routerLinkActive="active">Inicio</a>
+        <a routerLink="/boss/tasks" routerLinkActive="active">Tareas</a>
+        <a routerLink="/boss/team" routerLinkActive="active">Equipo</a>
+        <a routerLink="/boss/reports" routerLinkActive="active">Reportes</a>
+      </ng-container>
+    </ng-template>
+
+  </nav>
+
+  <!-- LOGOUT -->
+  <div class="logout">
+    <button (click)="logout()">Cerrar sesión</button>
+  </div>
+
+</div>

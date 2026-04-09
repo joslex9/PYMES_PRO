@@ -1,0 +1,111 @@
+.login-page{
+display:flex;
+height:100vh;
+background:#f5f7fb;
+}
+
+/* PANEL IZQUIERDO */
+
+.login-left{
+flex:1;
+background:linear-gradient(135deg,#2563eb,#1e40af);
+color:white;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:60px;
+}
+
+.brand h1{
+font-size:36px;
+margin-bottom:15px;
+}
+
+.brand p{
+margin-bottom:30px;
+line-height:1.5;
+}
+
+.brand ul{
+list-style:none;
+padding:0;
+}
+
+.brand li{
+margin-bottom:10px;
+}
+
+/* PANEL DERECHO */
+
+.login-right{
+flex:1;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.login-card{
+background:white;
+padding:40px;
+border-radius:12px;
+width:380px;
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
+
+.login-card h2{
+margin-bottom:5px;
+}
+
+.subtitle{
+color:#6b7280;
+margin-bottom:25px;
+}
+
+label{
+display:block;
+margin-top:15px;
+font-size:14px;
+}
+
+input{
+width:100%;
+padding:10px;
+margin-top:5px;
+border-radius:6px;
+border:1px solid #d1d5db;
+}
+
+.remember{
+margin-top:15px;
+display:flex;
+gap:8px;
+align-items:center;
+font-size:13px;
+}
+
+.btn-login{
+margin-top:20px;
+width:100%;
+background:#2563eb;
+color:white;
+border:none;
+padding:12px;
+border-radius:8px;
+cursor:pointer;
+font-weight:600;
+}
+
+.btn-login:hover{
+background:#1d4ed8;
+}
+
+.register{
+text-align:center;
+margin-top:15px;
+font-size:13px;
+}
+
+.register span{
+color:#2563eb;
+cursor:pointer;
+}

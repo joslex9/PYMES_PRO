@@ -1,0 +1,54 @@
+<h2>Mi Equipo</h2>
+
+<div class="team-stats">
+
+<div class="card">
+<h3>Total Empleados</h3>
+<p>{{stats.employees}}</p>
+</div>
+
+<div class="card">
+<h3>Tareas Pendientes</h3>
+<p>{{stats.pending}}</p>
+</div>
+
+</div>
+
+
+<div class="team-grid">
+
+<div class="employee-card" *ngFor="let e of employees">
+
+<div class="avatar">
+{{e.name.charAt(0)}}
+</div>
+
+<div class="employee-info">
+
+<h3>{{e.name}}</h3>
+<p>{{e.email}}</p>
+
+</div>
+
+<div class="employee-stats">
+
+<div>
+<span>Asignadas</span>
+<strong>{{e.total_tasks}}</strong>
+</div>
+
+<div>
+<span>En curso</span>
+<strong class="orange">{{e.in_progress}}</strong>
+</div>
+
+<div>
+<span>Listas</span>
+<strong class="green">{{e.completed}}</strong>
+</div>
+
+</div>
+
+</div>
+
+</div>

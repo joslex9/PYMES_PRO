@@ -1,0 +1,15 @@
+.layout {
+  display: flex;
+}
+
+/* CONTENIDO */
+.main-content {
+  margin-left: 220px;   /* 🔥 espacio del sidebar */
+  padding: 20px;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.page{
+padding:30px;
+}

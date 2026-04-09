@@ -1,0 +1,66 @@
+<div class="login-page">
+
+  <!-- PANEL IZQUIERDO -->
+  <div class="login-left">
+    <div class="brand">
+      <h1>TaskMaster SME</h1>
+      <p>
+        Impulsando la transformación digital de las Pymes en Colombia
+        con herramientas de gestión de clase mundial.
+      </p>
+
+      <ul>
+        <li>✔ Aumente la productividad de su equipo</li>
+        <li>✔ Control total de sus proyectos</li>
+        <li>✔ Análisis de datos en tiempo real</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- PANEL DERECHO -->
+  <div class="login-right">
+
+    <div class="login-card">
+
+      <h2>Bienvenido de nuevo</h2>
+      <p class="subtitle">
+        Ingrese sus credenciales para acceder a su panel
+      </p>
+
+      <!-- EMAIL -->
+      <label>Correo Electrónico</label>
+      <input
+        type="email"
+        placeholder="ejemplo@pyme.com"
+        [(ngModel)]="email"
+      />
+
+      <!-- PASSWORD -->
+      <label>Contraseña</label>
+      <input
+        type="password"
+        placeholder="********"
+        [(ngModel)]="password"
+      />
+
+      <!-- RECORDAR -->
+      <div class="remember">
+        <input type="checkbox">
+        <span>Recordarme en este equipo</span>
+      </div>
+
+      <!-- BOTON -->
+      <button (click)="login()" class="btn-login">
+        Iniciar Sesión →
+      </button>
+
+      <p class="register">
+        ¿Aún no tienes una cuenta?
+        <span>Regístrate ahora</span>
+      </p>
+
+    </div>
+
+  </div>
+
+</div>
